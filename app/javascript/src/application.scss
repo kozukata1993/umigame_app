@@ -1,2 +1,73 @@
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap/dist/css/bootstrap-reboot';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Header
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  background-color: #333;
+  color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  li {
+    list-style: none;
+  }
+  ul {
+    margin: 0px;
+  }
+  .site-header-section {
+    display: flex;
+    align-items: center;
+    .site-header-item {
+      padding: 5px 15px;
+    }
+  }
+}
+
+// Grid system
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    text-align: center;
+    border: 1px solid;
+  }
+}
+
+.feature-item {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%; /* IE11バグ対応 */
+}
+
+@media (max-width: 800px) {
+  .feature-item {
+    flex: 0 0 100%;
+    max-width: 100%; /* IE11バグ対応 */
+  }
+}
+
+
+// UI
+.ghost-button{
+  background: white;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.ghost-button--round{
+  border-radius: 100px;
+}
+
+.ghost-button:hover{
+  background: #aaa;
+}
+

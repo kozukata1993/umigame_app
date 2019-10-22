@@ -2,11 +2,24 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title #{full_title(yield(:title))}
-
     = csrf_meta_tags
     = csp_meta_tag
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application'
+
   %body
-    = yield
+    %header
+      %div.site-header
+        = link_to('Umigame App', root_path)
+        %nav
+          %ul.site-header-section
+            %li.site-header-item<
+              = link_to('Home', root_path)
+            %li.site-header-item<
+              = link_to('Log in', '#')
+
+    %div.main-content
+      = yield
+    %footer
