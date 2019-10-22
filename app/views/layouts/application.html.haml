@@ -10,16 +10,7 @@
     = stylesheet_pack_tag 'application'
 
   %body
-    %header
-      %div.site-header
-        = link_to('Umigame App', root_path)
-        %nav
-          %ul.site-header-section
-            %li.site-header-item<
-              = link_to('Home', root_path)
-            %li.site-header-item<
-              = link_to('Log in', '#')
-
-    %div.main-content
+    = render 'layouts/header'
+    %div.feature-list
       = yield
-    %footer
+    = render 'layouts/footer'
