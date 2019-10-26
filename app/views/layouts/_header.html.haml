@@ -7,4 +7,6 @@
         %li.site-header-item<
           = link_to('Home', root_path)
         %li.site-header-item<
-          = link_to('Log in', '#')
+          = link_to('Log in', login_path)
+        %li.site-header-item<
+          = link_to('Log out', logout_path, method: :delete)
