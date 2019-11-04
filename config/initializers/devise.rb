@@ -263,6 +263,7 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"]
   config.omniauth :facebook, ENV["FACEBOOK_ID"], ENV["FACEBOOK_SECRET_KEY"]
   OmniAuth.config.logger = Rails.logger if Rails.env.development?
+  OmniAuth.config.allowed_request_methods = [:post, :get]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
