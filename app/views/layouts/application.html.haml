@@ -5,9 +5,6 @@
     =render 'layouts/head'
   %body
     = render 'layouts/header'
-    %p.notice<
-      = notice
-    %p.alert<
-      = alert
-    = yield
+    .container
+      = yield
     = render 'layouts/footer'

@@ -1,6 +1,36 @@
 @import 'bootstrap/dist/css/bootstrap-reboot';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+// Typography
+.fs-1 {
+  font-size: 2.5rem;
+}
+
+.fs-2 {
+  font-size: 2rem;
+}
+
+.fs-3 {
+  font-size: 1.75rem;
+}
+
+.fs-4 {
+  font-size: 1.5rem;
+}
+
+.fs-5 {
+  font-size: 1.25rem;
+}
+
+.fs-6 {
+  font-size: 1rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
 // Header
 .site-header {
   display: flex;
@@ -28,12 +58,32 @@
   }
 }
 
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.flash {
+  font-size: 1rem;
+  text-align: center;
+  color: azure;
+  .notice {
+    background-color: #1a73e8;
+  }
+  .alert {
+    background-color: crimson;
+  }
+}
+
 // Grid system
+.container {
+  margin: 1rem;
+  padding: 1rem;
+}
+
 .feature-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem;
-  padding: 1rem;
 }
 
 .feature-item {

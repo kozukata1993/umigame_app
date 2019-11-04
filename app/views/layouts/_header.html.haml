@@ -1,12 +1,19 @@
 %header
-  %div.site-header
-    %div.logo
+  .site-header
+    .logo<
       = link_to("Umigame App", root_path)
     %nav
       %ul.site-header-section
         %li.site-header-item<
           = link_to('Home', root_path)
-        %li.site-header-item<
-          = link_to('Log in', login_path)
-        %li.site-header-item<
-          = link_to('Log out', logout_path, method: :delete)
+        - if user_signed_in?
+          %li.site-header-item<
+            currenet user: #{current_user.username}
+          %li.site-header-item<
+            = link_to('Log out', logout_path, method: :delete)
+        - else
+          %li.site-header-item<
+            = link_to('Log in', login_path)
+  .flash
+    - flash.each do |key, message|
+      = content_tag(:p, message, class: "#{key}")
