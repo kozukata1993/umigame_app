@@ -8,12 +8,14 @@
           = link_to('Home', root_path)
         - if user_signed_in?
           %li.site-header-item<
-            currenet user: #{current_user.username}
+            = link_to("currenet user: #{current_user.username}", "#")
           %li.site-header-item<
             = link_to('Log out', logout_path, method: :delete)
         - else
           %li.site-header-item<
             = link_to('Log in', login_path)
+          %li.site-header-item<
+            = link_to('Sign up', signup_path)
   .flash
     - flash.each do |key, message|
       = content_tag(:p, message, class: "#{key}")
