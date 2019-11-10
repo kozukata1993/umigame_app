@@ -5,16 +5,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
     Warden.test_mode!
-    @user = users(:alice)
+    @valid_user = users(:alice)
   end
 
   test "login with valid infomation" do
-    log_in @user
-
+    get login_path
+    log_in @valid_user
+    # assert_redirected_to @valid_user
+    # follow_redirect!
+    # assert_select "p", "Signed in successfully."
     get root_path
-    assert_select "a[href=?]", user_path(@user), text: "current user: #{@user.username}"
+    assert_select "a[href=?]", user_path(@valid_user), text: "current user: #{@valid_user.username}"
     assert_select "a[href=?]", logout_path
-    get user_path @user
+    get user_path(@valid_user)
     assert_template "users/show"
   end
 end

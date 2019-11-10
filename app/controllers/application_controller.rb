@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # ログイン後のリダイレクト先
+  # ログイン後のリダイレクト先をオーバーライド
   def after_sign_in_path_for(resource_or_scope)
     user_path(@user)
   end

@@ -15,7 +15,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   def log_in(user)
     if integration_test?
-      login_as(user)
+      login_as(user, :scope => :user)
     else
       sign_in(user)
     end
