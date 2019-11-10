@@ -1,6 +1,20 @@
 @import 'bootstrap/dist/css/bootstrap-reboot';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 
+// mixin
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+@mixin head_foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
 // Typography
 .fs-1 {
   font-size: 2.5rem;
@@ -33,10 +47,7 @@
 
 // Header
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+  @include head_foot;
   background-color: #333;
   a {
     text-decoration: none;
@@ -97,7 +108,6 @@
   }
 }
 
-
 // UI
 .ghost-button{
   background: white;
@@ -120,11 +130,8 @@
 
 // Footer
 .site-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 2rem 1rem 1rem;
-  padding: 2rem 4rem;
+  @include head_foot;
+  margin: 3rem 0rem 1rem 0rem;
   border-top: 1px solid #555;
   color: #555;
   a {
@@ -144,4 +151,13 @@
       padding: 0rem 2rem;
     }
   }
+}
+
+// debug
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
