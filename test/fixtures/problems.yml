@@ -1,4 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-test_problem:
-  content: lorem ipsum
+ten_min_ago:
+  content: "This is a problem posted at 10 minutes ago."
+  created_at: <%= 10.minutes.ago %>
+
+two_years_ago:
+  content: "This is a problem posted at 2 years ago."
+  created_at: <%= 2.years.ago %>
+
+six_hours_ago:
+  content: "This is a problem posted at 6 hours ago."
+  created_at: <%= 6.hours.ago %>
+
+most_recent:
+  content: "This is the most recent."
+  created_at: <%= Time.zone.now %>

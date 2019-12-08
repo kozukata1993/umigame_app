@@ -13,4 +13,12 @@ class UserTest < ActiveSupport::TestCase
     @user.username = ""
     assert_not @user.valid?
   end
+
+  test "associated problems should be destroyed" do
+    @user.save
+    @user.problems.create!(content: "Lorem ipsum", title: "test")
+    assert_difference "Problem.count", -1 do
+      @user.destroy
+    end
+  end
 end

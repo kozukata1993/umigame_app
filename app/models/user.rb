@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable,
          :trackable
 
+  has_many :problems, dependent: :destroy
   validates :username, presence: true
 
   def self.from_omniauth(auth)
